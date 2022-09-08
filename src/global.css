@@ -11,3 +11,19 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.btn-defalut {
+  background-color: #007BFF;
+  padding: 6px 12px;
+  color: white;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.btn-defalut:hover {
+  background-color: grey;
+}
+
+.btn-defalut:active {
+  background-color: green;
+}
