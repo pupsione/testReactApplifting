@@ -1,6 +1,6 @@
 import { getAllArticles, postArticle} from '../API';
 import { useState, useEffect } from 'react';
-import ArticlesList from '../Components/Article/ArticlesList';
+import ArticlesList from '../Components/AllArticles/ArticlesList';
 
 const HomePage: React.FC = () => {
   const [articles, setArticles] = useState<any>([]);

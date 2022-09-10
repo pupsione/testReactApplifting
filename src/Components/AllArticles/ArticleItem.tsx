@@ -19,7 +19,7 @@ const ArticleItem = (props: any) => {
   }, [props]);
 
   return (
-    <div className='flex mb-10'>
+    <article className='flex mb-10' >
       <div className='image pr-[29px]'>
         <img src='./images/imagesArticles/1.png' alt='image article' />
       </div>
@@ -37,14 +37,16 @@ const ArticleItem = (props: any) => {
 
         <div className='flex'>
           <Link to={`/detail/${articleId}`}>
-            <span className='pr-5 text-blue-500 hover:text-black active:text-blue-300'>Read whole article</span>
+            <span className='pr-5 text-blue-500 hover:text-black active:text-blue-300'>
+              Read whole article
+            </span>
           </Link>
           <div className=''>
             {infoDetail ? `${infoDetail.comments.length} coments` : null}
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 
