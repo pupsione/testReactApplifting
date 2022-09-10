@@ -14,7 +14,7 @@ const Header = () => {
         >
           <li className='flex-none pr-[40px]'>
             <Link to='/'>
-              <img src='./images/icons/logo.svg' alt='icons logo' />
+              <img src='../images/icons/logo.svg' alt='icons logo' />
             </Link>
           </li>
           <li className='flex-none pr-[40px] hover:text-black active:text-black-'>
@@ -39,9 +39,9 @@ const Header = () => {
               <li className='text-right text-blue-500 hover:text-black active:text-blue-300 max-w-[32px]'>
                 <Link to='/login'>
                   <img
-                    src='./images/icons/userIcon.svg'
+                    src='../images/icons/userIcon.svg'
                     alt='icons user'
-                    className='rounded-full '
+                    className='rounded-full'
                   />
                 </Link>
               </li>
