@@ -24,7 +24,11 @@ const MyArticleItem = (props: any) => {
         <button className='pr-3'>
           <img src='../images/icons/edit.svg' alt='edit' />
         </button>
-        <button onClick={() => deleteArticle(articleId)}>
+        <button
+          onClick={() => {
+            deleteArticle(articleId).then((data) => window.location.reload());
+          }}
+        >
           <img src='../images/icons/trash.svg' alt='delete' />
         </button>
       </div>

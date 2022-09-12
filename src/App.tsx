@@ -24,7 +24,7 @@ function App() {
   return (
     <>
       <Header />
-      <div className='container mx-auto'>
+      <div className='container mx-auto pl-3 pr-4 overflow-hidden	'>
         <Routes>
           <Route path='/' element={<HomePage />}></Route>
           <Route path='/about' element={<AboutPage />}></Route>

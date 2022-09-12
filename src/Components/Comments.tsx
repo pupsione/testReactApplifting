@@ -1,4 +1,4 @@
-import { postComment} from '../API';
+import { postComment, getToken } from '../API';
 
 interface PropsComments {
   comments: any;
@@ -21,26 +21,31 @@ const Comments = (props: PropsComments) => {
     <div className='mb-20'>
       <h2 className='font-medium text-2xl mb-6'>{`Comments (${comments.length})`}</h2>
       <div className=''>
-        <div className='userComments flex items-center mb-5'>
-          <div className='max-w-[40px] mr-[28px]'>
-            <img
-              src='../images/icons/userIcon.svg'
-              alt='icons logo'
-              className='rounded-full h-fit'
-            />
+
+        {!getToken() ? (
+          <p className='mb-5'>You must be logged in to create comments!</p>
+        ) : (
+          <div className='userComments flex items-center mb-5'>
+            <div className='max-w-[40px] mr-[28px]'>
+              <img
+                src='../images/icons/userIcon.svg'
+                alt='icons logo'
+                className='rounded-full h-fit'
+              />
+            </div>
+            <form
+              className='max-w-[690px] w-full'
+              onSubmit={(e) => createComment(e)}
+            >
+              <input
+                name='commentsText'
+                type='text'
+                placeholder='Join the discussion'
+                className='border w-full rounded inline pt-2 pb-2 pl-3'
+              />
+            </form>
           </div>
-          <form
-            className='max-w-[690px] w-full'
-            onSubmit={(e) => createComment(e)}
-          >
-            <input
-              name='commentsText'
-              type='text'
-              placeholder='Join the discussion'
-              className='border w-full rounded inline pt-2 pb-2 pl-3'
-            />
-          </form>
-        </div>
+        )}
 
         {comments.length ? (
           comments.map((item: any) => {

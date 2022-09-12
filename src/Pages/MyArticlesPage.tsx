@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
-import { getAllArticles } from '../API';
+import { getAllArticles, getToken } from '../API';
 import MyArticlesList from '../Components/MyAtricles/MyArticlesList';
 
 const MyArticles = () => {
@@ -13,13 +13,23 @@ const MyArticles = () => {
 
   return (
     <div>
-      <div className='flex items-center'>
-        <h1 className='text-4xl font-medium	pr-8'>My Articles</h1>
-        <Link to={'/createarticles'} className='btn-defalut'>
-          Create new article
-        </Link>
-      </div>
-      {myArticles ? <MyArticlesList myArticles={myArticles} /> : null}
+      {!getToken() ? (
+        <p>Oups! Failed Login</p>
+      ) : (
+        <div>
+          <div>
+            <div className='flex items-center'>
+              <h1 className='text-4xl font-medium	pr-8'>My Articles</h1>
+              <Link to={'/createarticles'} className='btn-defalut'>
+                Create new article
+              </Link>
+            </div>
+          </div>
+          <div className='overflow-auto	'>
+            {myArticles ? <MyArticlesList myArticles={myArticles} /> : null}
+          </div>
+        </div>
+      )}
     </div>
   );
 };

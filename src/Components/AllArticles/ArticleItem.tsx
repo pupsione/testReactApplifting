@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import { getArticle, deleteArticle } from '../../API';
+import { getArticle } from '../../API';
 
 const ArticleItem = (props: any) => {
   const [infoDetail, setInfoDetail] = useState<any>();
@@ -19,9 +19,9 @@ const ArticleItem = (props: any) => {
   }, [props]);
 
   return (
-    <article className='flex mb-10' >
-      <div className='image pr-[29px]'>
-        <img src='./images/imagesArticles/1.png' alt='image article' />
+    <article className=' mb-10 flex-col sm:flex-row sm:flex' >
+      <div className='image sm:pr-[29px] w-full sm:max-w-[300px]'>
+        <img src='./images/imagesArticles/1.png' alt='image article' className='w-full object-cover	mb-2 max-h-60	' />
       </div>
       <div className='wrap max-w-lg'>
         <div className='content'>
